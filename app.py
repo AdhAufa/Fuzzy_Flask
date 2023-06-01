@@ -4,7 +4,6 @@ import skfuzzy as fuzz
 from skfuzzy import control as ctrl
 
 app = Flask(__name__)
-    # app.run(host='192.168.18.117')
 
 # Define the input variables
 oxygen_rate = ctrl.Antecedent(np.arange(0, 120, 1), 'oxygen_rate')
@@ -101,4 +100,4 @@ def calculate_hypoxia():
     return {'hypoxia': hypoxia_level, 'category' : category}
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host="0.0.0.0", port=5000, debug=True)
